@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 const Home: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
 
   return (
     <motion.div 
@@ -14,7 +16,7 @@ const Home: React.FC = () => {
       exit={{ opacity: 0 }}
       className="bg-white overflow-x-hidden"
     >
-      {/* SECTION HERO */}
+      {/* 1. SECTION HERO */}
       <section className="relative h-screen flex items-center overflow-hidden bg-neutral-900">
         <motion.div style={{ opacity }} className="absolute inset-0 z-0">
           <img 
@@ -28,9 +30,9 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10 pt-20">
           <div className="max-w-6xl">
             <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }} className="mb-8">
-               <h1 className="font-serif leading-[0.8] tracking-tighter">
-                <span className="block text-[18vw] md:text-[14rem] font-bold text-white uppercase">ONG</span>
-                <span className="block text-[15vw] md:text-[11rem] font-light italic outline-text uppercase -mt-4 md:-mt-10">STUDIO</span>
+               <h1 className="font-serif leading-[0.8] tracking-tighter text-white">
+                <span className="block text-[18vw] md:text-[14rem] font-bold uppercase">ONG</span>
+                <span className="block text-[11rem] font-light italic outline-text uppercase -mt-4 md:-mt-10">STUDIO</span>
               </h1>
             </motion.div>
             
@@ -61,7 +63,40 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION PRESTATIONS PREMIUM - Mise à jour avec descriptions style image7.png */}
+      {/* 2. SECTION VISION & APPROCHE (RESTAURÉE) */}
+      <section className="py-48 bg-white relative">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-24 items-start mb-32">
+            <div>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-[1px] bg-amber-600"></div>
+                <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-neutral-400 font-sans">Vision & Approche</span>
+              </div>
+              <h2 className="text-7xl md:text-[9rem] font-serif leading-[0.85] tracking-tight text-black">
+                L'Excellence<br/>
+                <span className="italic font-light text-neutral-200 ml-20 md:ml-40">Visuelle</span>
+              </h2>
+            </div>
+            <div className="lg:pt-32 lg:pl-20 space-y-10">
+              <p className="text-neutral-500 text-xl font-light leading-relaxed max-w-md">
+                Une sélection rigoureuse de travaux où la précision technique rencontre l'instinct artistique. Chaque pixel est une décision stratégique.
+              </p>
+              <Quote className="text-amber-500/20 w-16 h-16" />
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-16 md:gap-32 items-center">
+             <motion.div style={{ y: y1 }} className="aspect-[4/5] overflow-hidden group shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100" alt="Vision 1" />
+             </motion.div>
+             <motion.div style={{ y: y2 }} className="aspect-[3/4] overflow-hidden group shadow-2xl md:translate-y-32">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100" alt="Vision 2" />
+             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. SECTION PRESTATIONS PREMIUM */}
       <section className="py-32 bg-[#111111] text-white">
         <div className="container mx-auto px-6">
           <div className="mb-16">
@@ -99,13 +134,13 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION ESPRIT */}
+      {/* 4. SECTION ESPRIT */}
       <section className="py-40 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div className="relative flex justify-center">
               <div className="relative w-full max-w-md">
-                <div className="relative z-10 shadow-2xl grayscale overflow-hidden aspect-[4/3]">
+                <div className="relative z-10 shadow-[20px_20px_60px_rgba(0,0,0,0.1)] grayscale overflow-hidden aspect-[4/3]">
                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=1200" alt="Appareil photo" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute -bottom-6 -right-6 bg-amber-500 p-8 text-black shadow-xl z-20 min-w-[160px] text-center">
@@ -121,21 +156,24 @@ const Home: React.FC = () => {
                 <div className="w-10 h-[1px] bg-amber-600"></div>
                 <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-neutral-400">L'Esprit</span>
               </div>
-              <h2 className="text-6xl md:text-7xl font-serif leading-tight mb-12">Allier <span className="italic">Stratégie</span> & Esthétique</h2>
+              <h2 className="text-6xl md:text-7xl font-serif leading-tight mb-12 text-black">Allier <span className="italic">Stratégie</span> & Esthétique</h2>
+              
               <div className="space-y-8 text-neutral-500 font-light leading-relaxed mb-12 max-w-xl">
                  <p>Formé en <span className="text-black font-semibold border-b border-amber-500">réseaux et télécommunications</span>, j'apporte une rigueur technique inhabituelle dans le monde de l'image.</p>
-                 <p>Chez ONG Studio, nous ne créons pas seulement de jolies photos. Nous construisons des outils de communication visuelle qui servent vos objectifs marketing et votre storytelling digital.</p>
+                 <p>Chez ONG Studio, nous construisons des outils de communication visuelle qui servent vos objectifs marketing.</p>
               </div>
+
               <div className="grid grid-cols-2 gap-12 border-t border-neutral-100 pt-10 mb-12">
                 <div>
                   <h4 className="text-[10px] font-black uppercase tracking-widest mb-4 text-black">Technique</h4>
-                  <p className="text-xs text-neutral-400">Maîtrise de la lumière et du post-traitement avancé.</p>
+                  <p className="text-xs text-neutral-400 leading-relaxed">Maîtrise de la lumière et du post-traitement avancé.</p>
                 </div>
                 <div>
                   <h4 className="text-[10px] font-black uppercase tracking-widest mb-4 text-black">Stratégie</h4>
-                  <p className="text-xs text-neutral-400">Optimisation des visuels pour l'engagement numérique.</p>
+                  <p className="text-xs text-neutral-400 leading-relaxed">Optimisation des visuels pour l'engagement numérique.</p>
                 </div>
               </div>
+
               <Link to="/a-propos" className="flex items-center gap-6 text-[10px] font-black uppercase tracking-[0.4em] group text-black">
                 LIRE MON HISTOIRE <div className="w-16 h-[1px] bg-black group-hover:w-24 transition-all"></div>
               </Link>
@@ -144,10 +182,10 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION STATISTIQUES */}
+      {/* 5. SECTION STATISTIQUES */}
       <section className="py-24 bg-white border-t border-b border-neutral-100">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center text-black">
             {[
               { label: "Projets", value: "500+" },
               { label: "Satisfaction", value: "100%" },
@@ -155,7 +193,7 @@ const Home: React.FC = () => {
               { label: "Réactivité", value: "24h" }
             ].map((stat, idx) => (
               <div key={idx} className="space-y-2">
-                <p className="text-4xl font-serif font-bold text-black">{stat.value}</p>
+                <p className="text-4xl font-serif font-bold">{stat.value}</p>
                 <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-neutral-400">{stat.label}</p>
               </div>
             ))}
@@ -163,23 +201,24 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION TÉMOIGNAGES */}
-      <section className="pt-40 pb-20 bg-white">
-        <div className="container mx-auto px-6">
+      {/* 6. SECTION TÉMOIGNAGES */}
+      <section className="py-40 bg-white">
+        <div className="container mx-auto px-6 text-black">
           <div className="text-center mb-24">
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-10 h-[1px] bg-amber-600"></div>
               <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-neutral-400">Témoignages</span>
               <div className="w-10 h-[1px] bg-amber-600"></div>
             </div>
-            <h2 className="text-6xl md:text-7xl font-serif italic text-black">La voix de nos clients</h2>
+            <h2 className="text-6xl md:text-7xl font-serif italic">La voix de nos clients</h2>
           </div>
+
           <div className="max-w-4xl mx-auto">
              <div className="bg-[#111111] p-16 md:p-24 relative overflow-hidden shadow-2xl rounded-sm text-white">
                 <div className="absolute top-0 left-10 text-[20rem] font-serif text-white/5 leading-none select-none pointer-events-none">“</div>
                 <div className="relative z-10 text-center">
                    <div className="flex justify-center gap-1 mb-10 text-amber-500 text-xl">★★★★★</div>
-                   <p className="text-xl md:text-3xl font-serif leading-relaxed italic mb-12">
+                   <p className="text-xl md:text-3xl font-serif leading-relaxed italic mb-12 italic">
                       "ONG Studio a su capter l'essence même de notre marque. Le professionnalisme et la vision artistique de Marc font de chaque collaboration un succès garanti."
                    </p>
                    <div className="space-y-2">
@@ -192,7 +231,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* FINAL CTA SECTION */}
+      {/* 7. FINAL CTA SECTION */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <img 
@@ -202,11 +241,13 @@ const Home: React.FC = () => {
           />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
+
         <div className="container mx-auto px-6 relative z-10 text-center text-white">
            <h2 className="text-7xl md:text-9xl font-serif mb-12 italic">
             Donnons vie à <br/> 
             <span className="italic outline-text opacity-80">vos idées.</span>
            </h2>
+           
            <div className="flex flex-col md:flex-row items-center justify-center gap-6">
               <Link to="/contact" className="px-12 py-6 bg-amber-500 text-black text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-white transition-all shadow-2xl">DÉMARRER UN PROJET</Link>
               <Link to="/portfolio" className="px-12 py-6 border border-white/30 text-white text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all">VOIR LE TRAVAIL</Link>

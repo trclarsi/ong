@@ -5,8 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: true,
+    host: '0.0.0.0',
     port: 5173,
-    allowedHosts: 'all'
+    strictPort: true,
+    allowedHosts: [
+      '5173-01kgvvpyktf4qenpkj1frqj0s5.cloudspaces.litng.ai',
+      '.litng.ai',
+      '.cloudspaces.litng.ai'
+    ]
   }
 })
