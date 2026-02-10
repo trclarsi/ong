@@ -29,6 +29,22 @@ Assurez-vous d'avoir [Node.js](https://nodejs.org/) installé sur votre système
    ```
    L'application sera disponible sur [http://localhost:5173](http://localhost:5173).
 
+## ⚙️ Administration du contenu
+
+Le site a été conçu pour être facilement administrable sans avoir à toucher à la structure complexe du code React. Tout le contenu (textes, images, listes) est centralisé dans le dossier `src/data/`.
+
+Pour mettre à jour le site, il vous suffit de modifier les fichiers suivants :
+
+- **`src/data/home.ts`** : Statistiques, témoignage client et contenu de la bannière d'accueil.
+- **`src/data/about.ts`** : Vos compétences, votre parcours (timeline), votre équipement et vos valeurs.
+- **`src/data/services.ts`** : Liste des prestations, descriptions, prix et avantages concurrentiels.
+- **`src/data/portfolio.ts`** : Gestion des catégories et ajout/suppression de projets dans la galerie.
+
+**Procédure :** 
+1. Ouvrez le fichier correspondant dans votre éditeur.
+2. Modifiez le texte ou l'URL de l'image entre les guillemets.
+3. Enregistrez le fichier. Le site se mettra à jour automatiquement si le serveur est lancé.
+
 ## 🛠️ Technologies utilisées
 
 - **React 19** - Bibliothèque UI
@@ -41,9 +57,10 @@ Assurez-vous d'avoir [Node.js](https://nodejs.org/) installé sur votre système
 
 ## 🎨 Architecture du projet
 
+- `src/data/` : **Back-office simulé** (données du site)
 - `src/pages/` : Composants de pages (Accueil, À Propos, Portfolio, etc.)
 - `src/layout/` : Composants structurels (Navbar, Footer, Layout)
-- `src/utils/` : Utilitaires (ScrollToTop, etc.)
+- `src/utils/` : Utilitaires (ScrollToTop, configuration serveur, etc.)
 - `src/index.css` : Styles globaux et configuration des polices Premium
 
 ---

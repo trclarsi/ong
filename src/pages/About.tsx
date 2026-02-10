@@ -1,42 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Award, 
-  Target, 
-  Zap, 
-  Globe, 
-  ChevronRight,
-  Download
-} from 'lucide-react';
+import { Globe, ChevronRight, Download } from 'lucide-react';
+import { skills, timeline, equipment, values } from '../data/about';
 
 const About: React.FC = () => {
-  const skills = [
-    { name: "Photographie", level: 95 },
-    { name: "Adobe Lightroom", level: 90 },
-    { name: "Photoshop", level: 88 },
-    { name: "Design graphique", level: 85 },
-    { name: "Branding", level: 82 },
-    { name: "UI/UX Design", level: 78 },
-  ];
-
-  const timeline = [
-    { year: "2024", title: "Directeur Artistique", company: "Freelance", desc: "Direction de projets visuels complexes pour des marques internationales." },
-    { year: "2020", title: "Photographe Senior", company: "Studio Lumière", desc: "Spécialisation en portrait corporate et photographie d'architecture." },
-    { year: "2017", title: "Designer Graphique", company: "Agence Créative", desc: "Conception d'identités visuelles et de supports marketing." },
-    { year: "2014", title: "Assistant Photographe", company: "Photo Lab Paris", desc: "Apprentissage des techniques d'éclairage et de post-production." },
-  ];
-
-  const equipment = [
-    { category: "Boîtiers", items: ["Canon EOS R5", "Sony A7 IV"] },
-    { category: "Logiciels", items: ["Adobe Creative Suite", "Figma", "Capture One", "DaVinci Resolve"] },
-  ];
-
-  const values = [
-    { icon: Award, title: "Authenticité", text: "Chaque image reflète la vérité de votre marque, sans artifice ni compromis." },
-    { icon: Zap, title: "Créativité", text: "Repousser les limites du conventionnel pour créer des visuels uniques et mémorables." },
-    { icon: Target, title: "Excellence", text: "Un engagement absolu envers la qualité, du concept à la livraison finale." }
-  ];
-
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -79,9 +46,8 @@ const About: React.FC = () => {
               <div className="space-y-6 text-lg text-neutral-500 font-light leading-relaxed">
                 <p>Depuis plus de 10 ans, je transforme des visions en réalités visuelles. Mon parcours m'a mené de l'argentique au numérique, du studio aux quatre coins du monde, toujours avec la même passion : capturer l'essence de chaque moment, chaque marque, chaque histoire.</p>
                 <p>Technicien en réseaux et télécommunications de formation, j'ai développé au fil des années une solide expertise en marketing numérique. Cette dualité me permet d'apporter une structure technique impeccable à des concepts hautement créatifs.</p>
-                <p>Chaque projet est une collaboration intime où j'écoute, comprends et traduis votre univers en un langage visuel unique et mémorable.</p>
               </div>
-              <button className="flex items-center gap-6 text-[10px] font-black uppercase tracking-[0.4em] group border-b border-black pb-4">
+              <button className="flex items-center gap-6 text-[10px] font-black uppercase tracking-[0.4em] group border-b border-black pb-4 text-black">
                 TÉLÉCHARGER MON CV <Download size={14} className="group-hover:translate-y-1 transition-transform" />
               </button>
             </div>
@@ -91,7 +57,7 @@ const About: React.FC = () => {
               </div>
               <div className="absolute -bottom-10 -left-10 bg-amber-500 p-12 text-black shadow-2xl hidden md:block max-w-[280px]">
                 <p className="text-5xl font-serif font-bold mb-2">10+</p>
-                <p className="text-[10px] font-black uppercase tracking-widest leading-tight">Années de passion, d'évolution et d'excellence visuelle.</p>
+                <p className="text-[9px] font-black uppercase tracking-widest leading-tight text-black">Années de passion, d'évolution et d'excellence visuelle.</p>
               </div>
             </div>
           </div>
@@ -107,11 +73,11 @@ const About: React.FC = () => {
                 <div className="w-10 h-[1px] bg-amber-600"></div>
                 <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-neutral-400">Expertise</span>
               </div>
-              <h3 className="text-5xl font-serif mb-12 italic">Maîtrise Technique</h3>
+              <h3 className="text-5xl font-serif mb-12 italic text-black">Maîtrise Technique</h3>
               <div className="space-y-8">
                 {skills.map((skill, idx) => (
                   <div key={idx} className="space-y-2">
-                    <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest">
+                    <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-black">
                       <span>{skill.name}</span>
                       <span>{skill.level}%</span>
                     </div>
@@ -152,7 +118,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* TIMELINE SECTION (PARCOURS ALTERNÉ) */}
+      {/* TIMELINE SECTION */}
       <section className="py-48 bg-white overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="text-center mb-32">
@@ -161,9 +127,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="max-w-6xl mx-auto relative">
-            {/* Ligne verticale centrale */}
             <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-neutral-100 -translate-x-1/2 hidden md:block"></div>
-
             <div className="space-y-24 md:space-y-0">
               {timeline.map((item, idx) => (
                 <motion.div 
@@ -172,9 +136,8 @@ const About: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: idx * 0.1 }}
                   viewport={{ once: true }}
-                  className={`relative flex flex-col md:flex-row items-center md:py-12 ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                  className={`relative flex flex-col md:flex-row items-center md:py-12 group ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                 >
-                  {/* Bloc de contenu (occupe 50% de la largeur sur desktop) */}
                   <div className={`w-full md:w-1/2 ${idx % 2 === 0 ? 'md:pr-20 md:text-right' : 'md:pl-20 md:text-left'}`}>
                     <span className="text-5xl md:text-6xl font-serif text-neutral-100 mb-4 block group-hover:text-[#c0822f] transition-colors">
                       {item.year}
@@ -189,11 +152,7 @@ const About: React.FC = () => {
                       </p>
                     </div>
                   </div>
-
-                  {/* Cercle central (Point d'ancrage sur la ligne) */}
                   <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-white border border-[#c0822f] rounded-full z-10 hidden md:block group-hover:scale-150 transition-transform"></div>
-
-                  {/* Espaceur pour le côté opposé */}
                   <div className="hidden md:block md:w-1/2"></div>
                 </motion.div>
               ))}
