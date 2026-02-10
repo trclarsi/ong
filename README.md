@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# ONG Studio - Site Premium
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ce projet est le site web officiel de **ONG Studio**, un studio de création visuelle basé à Montréal spécialisé dans la photographie haute définition et le marketing digital.
 
-Currently, two official plugins are available:
+## 🚀 Installation et Lancement
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Suivez ces instructions pour faire fonctionner le projet sur votre machine locale.
 
-## React Compiler
+### Prérequis
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Assurez-vous d'avoir [Node.js](https://nodejs.org/) installé sur votre système.
 
-## Expanding the ESLint configuration
+### Étapes
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Cloner le projet**
+   ```bash
+   git clone https://github.com/trclarsi/ong.git
+   cd ong
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. **Installer les dépendances**
+   ```bash
+   npm install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. **Lancer l'application**
+   ```bash
+   npm run dev
+   ```
+   L'application sera disponible sur [http://localhost:5173](http://localhost:5173).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Technologies utilisées
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **React 19** - Bibliothèque UI
+- **TypeScript** - Typage statique
+- **Vite** - Outil de build ultra-rapide
+- **Tailwind CSS** - Framework CSS utilitaire
+- **Framer Motion** - Bibliothèque d'animations fluides
+- **Lucide React** - Icônes minimalistes
+- **React Router** - Gestion de la navigation (SPA)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🎨 Architecture du projet
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `src/pages/` : Composants de pages (Accueil, À Propos, Portfolio, etc.)
+- `src/layout/` : Composants structurels (Navbar, Footer, Layout)
+- `src/utils/` : Utilitaires (ScrollToTop, etc.)
+- `src/index.css` : Styles globaux et configuration des polices Premium
+
+---
+© 2026 ONG Studio. Designed for Excellence.
