@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-white text-black antialiased font-sans;
+  }
+}
+
+@layer components {
+  .outline-text {
+    -webkit-text-stroke: 1px rgba(255,255,255,0.8);
+    color: transparent;
+  }
+  
+  .outline-text-dark {
+    -webkit-text-stroke: 1px rgba(0,0,0,0.2);
+    color: transparent;
+  }
+
+  .premium-button {
+    @apply px-10 py-5 bg-white text-black text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-amber-600 hover:text-white transition-all shadow-xl;
+  }
+}
