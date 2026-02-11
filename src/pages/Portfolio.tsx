@@ -12,8 +12,8 @@ const Portfolio: React.FC = () => {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="bg-white">
       {/* HERO SECTION */}
       <section className="relative pt-64 pb-32 bg-neutral-950 text-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
-          <span className="text-[40vw] font-serif font-bold italic absolute -top-40 -right-40 leading-none select-none">ART</span>
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover" alt="Background" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl">

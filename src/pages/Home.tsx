@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Play, Quote, ChevronRight } from 'lucide-react';
+import { Play, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { stats, testimonial, heroContent } from '../data/home';
 
@@ -20,8 +20,12 @@ const Home: React.FC = () => {
       {/* SECTION HERO */}
       <section className="relative h-screen flex items-center overflow-hidden bg-neutral-900">
         <motion.div style={{ opacity }} className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1493125590504-03706037748a?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover opacity-60 scale-105" alt="Hero" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+          <img 
+            src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=2000" 
+            className="w-full h-full object-cover opacity-60 scale-105" 
+            alt="Hero Background" 
+          />
+          <div className="absolute inset-0 bg-black/50"></div>
         </motion.div>
 
         <div className="container mx-auto px-6 relative z-10 pt-20">

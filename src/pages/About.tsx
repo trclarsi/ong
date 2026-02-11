@@ -14,7 +14,7 @@ const About: React.FC = () => {
       {/* HERO SECTION */}
       <section className="relative pt-64 pb-32 bg-neutral-950 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img src="https://images.unsplash.com/photo-1492691523567-61723c275df1?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover" alt="About Background" />
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover" alt="About Background" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl">

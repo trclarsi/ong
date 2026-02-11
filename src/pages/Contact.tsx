@@ -32,6 +32,9 @@ const Contact: React.FC = () => {
     >
       {/* HERO SECTION */}
       <section className="relative pt-64 pb-20 bg-neutral-950 text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover" alt="Background" />
+        </div>
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none">
           <span className="text-[30vw] font-serif font-bold italic absolute -top-20 -right-20 leading-none select-none">HELLO</span>
         </div>

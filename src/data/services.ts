@@ -14,44 +14,44 @@ export interface Service {
 export const services: Service[] = [
   {
     id: 0,
-    title: "Shooting Photo",
+    title: "Shooting Photo Premium",
     icon: Camera,
-    desc: "Sublimation de votre image personnelle.",
-    features: ["Direction artistique", "Retouches professionnelles", "Fichiers haute résolution", "Livraison express 48h"],
-    price: "150$",
+    desc: "Portrait, mode ou corporate. Des images qui captent l'essence de votre personnalité avec une direction artistique pointue.",
+    features: ["Direction artistique sur mesure", "Retouches avancées HD", "Usage commercial inclus", "Livraison express 48h"],
+    price: "À partir de 150$",
     bg: "https://images.unsplash.com/photo-1493863641943-9b68992a8d07?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 1,
-    title: "Mariage",
+    title: "Captation Événementielle",
     icon: Video,
-    desc: "Capturer l'éternité de votre union.",
-    features: ["Étalonnage couleur", "Motion design", "Sound design", "Formats multi-plateformes"],
-    price: "500$",
+    desc: "Capturer l'éternité de vos moments les plus précieux, du mariage au gala d'entreprise, avec une discrétion absolue.",
+    features: ["Couverture multicaméra", "Étalonnage cinématographique", "Montage dynamique", "Formats réseaux sociaux"],
+    price: "À partir de 500$",
     bg: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 2,
-    title: "Mode",
+    title: "Identité de Marque",
     icon: Palette,
-    desc: "L'art du style et de la direction artistique.",
-    features: ["Recherche conceptuelle", "3 propositions initiales", "Révisions illimitées", "Fichiers vectoriels (SVG/AI)"],
-    price: "600$",
+    desc: "L'art du branding stratégique. Nous créons des univers visuels qui racontent votre histoire et engagent votre audience.",
+    features: ["Logo & Charte graphique", "Recherche typographique", "Palette de couleurs unique", "Supports de communication"],
+    price: "À partir de 600$",
     bg: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: 3,
-    title: "Corporate",
+    title: "Solution Corporate",
     icon: Printer,
-    desc: "Valoriser votre expertise et votre image.",
-    features: ["Design sur mesure", "Fichiers prêt à imprimer", "Plusieurs formats inclus", "Suivi avec l'imprimeur"],
-    price: "150$",
+    desc: "Valoriser votre expertise et votre infrastructure à travers des visuels qui inspirent confiance et professionnalisme.",
+    features: ["Reportage en entreprise", "Portrait de collaborateurs", "Packshot produits", "Architecture & Immobiler"],
+    price: "À partir de 150$",
     bg: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"
   }
 ];
 
 export const advantages = [
-  { icon: Zap, title: "Rigueur Technologique", text: "Issu des télécommunications, je n'ignore aucun détail technique. Vos fichiers sont optimisés pour chaque plateforme." },
-  { icon: Clock, title: "Réactivité Garantie", text: "Dans un monde digital rapide, la vitesse est un luxe. Livraison des premiers jets sous 48h pour la photographie." },
-  { icon: ShieldCheck, title: "Qualité Intransigeante", text: "Le 'bon' ne suffit pas. Je vise l'excellence visuelle à chaque étape de la production." }
+  { icon: Zap, title: "Rigueur Technologique", text: "Issu des télécommunications, je n'ignore aucun détail technique. Vos fichiers sont optimisés pour une performance maximale sur chaque plateforme numérique." },
+  { icon: Clock, title: "Réactivité Garantie", text: "Dans un environnement digital en constante évolution, la vitesse est un avantage stratégique. Nous garantissons une livraison des premiers jets sous 48h." },
+  { icon: ShieldCheck, title: "Qualité Intransigeante", text: "Le standard n'est pas notre limite. Nous visons l'excellence visuelle absolue à chaque étape, de la pré-production à la livraison finale." }
 ];
